@@ -1,0 +1,322 @@
+---
+title: "Technical Case Study: Financial Institution Platform | Default Route Advisory"
+description: "Detailed breakdown of the Azure foundation, identity governance, network security, and AI Foundry implementation for a regulated financial institution."
+---
+
+Technical Deep Dive
+
+# Building a Defensible Azure Foundation
+
+How we modernized cloud, identity, security, and governance for a regulated financial institution.
+
+This engagement focused on modernizing cloud, identity, security, and governance foundations to support a regulated financial institution operating under FFIEC / GLBA expectations. The work spanned strategy, architecture, hands-on implementation, and automation, with a clear emphasis on **control-plane rigor, repeatability, and audit defensibility**.
+
+## 1\. Azure Platform & Landing Zone Strategy
+
+### Objectives
+
+*   Establish a bank-grade Azure foundation aligned to Microsoft ESLZ
+*   Enforce strong separation of duties across management, identity, and networking
+
+### Work Completed
+
+*   Defined subscription hierarchy and management group structure (Platform vs. Workload)
+*   Designed policy-driven governance model with Azure Policy initiatives
+*   Established naming standards and resource conventions
+*   Documented Architecture Decision Records (ADRs) for audit trails
+
+**Outcome:** A defensible, regulator-friendly Azure foundation that prevents ad-hoc sprawl.
+
+## Azure Cloud Transformation
+
+Enterprise Financial Services Architecture
+
+### Environment View
+
+Full enterprise-grade configuration with high availability
+
+DevelopmentProductionDisaster Recovery
+
+### Data Flow Legend
+
+User Requests
+
+Security Checks
+
+Data Operations
+
+Monitoring Events
+
+### Identity & Access Management
+
+#### Azure Active Directory
+
+Enterprise SSO & MFA
+
+#### Azure AD B2C
+
+Customer Identity
+
+#### Privileged Identity Mgmt
+
+JIT Access Control
+
+### Security & Compliance
+
+#### Azure Security Center
+
+Threat Protection
+
+#### Key Vault
+
+Secrets Management
+
+#### Azure Sentinel
+
+SIEM & SOAR
+
+#### DDoS Protection
+
+Premium
+
+### Network Infrastructure
+
+#### Azure Virtual Network
+
+Private Network
+
+#### Application Gateway
+
+Load Balancer & WAF
+
+#### Azure ExpressRoute
+
+Dedicated Connectivity
+
+### Application Services
+
+#### App Service
+
+Web & API Apps
+
+#### Azure Kubernetes
+
+Container Orchestration
+
+#### Logic Apps
+
+Workflow Automation
+
+#### Functions
+
+Serverless Compute
+
+### Data Platform
+
+#### Azure SQL Database
+
+Managed RDBMS
+
+#### Cosmos DB
+
+Global Distribution
+
+#### Synapse Analytics
+
+Data Warehouse
+
+#### Data Lake Storage
+
+Big Data Storage
+
+### Integration & Messaging
+
+#### Service Bus
+
+Enterprise Messaging
+
+#### Event Grid
+
+Event-Driven Architecture
+
+#### API Management
+
+API Gateway
+
+### Monitoring & Management
+
+#### Azure Monitor
+
+Observability Platform
+
+#### Log Analytics
+
+Centralized Logging
+
+#### Application Insights
+
+APM & Diagnostics
+
+#### Azure Policy
+
+Governance & Compliance
+
+### Key Architecture Principles
+
+#### Zero Trust
+
+Verify explicitly, least privilege
+
+#### High Availability
+
+Multi-region, 99.99% SLA
+
+#### Compliance
+
+PCI-DSS, SOC 2, ISO 27001
+
+#### Resiliency
+
+Automated DR & Backup
+
+## 2\. Identity & Access Control (Entra ID)
+
+### Objectives
+
+*   Centralize identity control and minimize standing privilege
+*   Support strong audit evidence
+
+### Work Completed
+
+*   Implemented Privileged Identity Management (PIM) with JIT elevation
+*   Defined break-glass access strategy with Conditional Access exclusions
+*   Established admin role separation to avoid Global Admin reliance
+*   Designed Conditional Access patterns with "What-If" testing
+
+**Outcome:** Identity is no longer “trust-based”; it is policy-enforced and auditable.
+
+## 3\. Network Architecture (Hub-and-Spoke / vWAN)
+
+### Objectives
+
+*   Centralize connectivity and inspection
+*   Support hybrid banking workloads without flat routing
+
+### Work Completed
+
+*   Designed Azure Virtual WAN hub architecture
+*   Defined hub/spoke segmentation for workload isolation
+*   Standardized DNS architecture with Private DNS zones
+*   Defined routing strategy to avoid transitive trust
+
+**Outcome:** Network design favors deterministic routing and inspection, not convenience.
+
+## 4\. Security Controls & Inspection
+
+### Objectives
+
+*   Enforce centralized traffic inspection
+*   Reduce lateral movement risk
+
+### Work Completed
+
+*   Designed Azure Firewall Premium architecture with centralized policy
+*   Defined rule taxonomy (DNAT vs Network vs Application)
+*   Standardized logging and diagnostics for flow visibility
+
+**Outcome:** Security is explicitly engineered, not bolted on.
+
+## 5\. Azure Virtual Desktop (AVD)
+
+### Objectives
+
+*   Secure remote access to banking workloads
+*   Enforce location-based access control
+
+### Work Completed
+
+*   Designed AVD access control model
+*   Authored Conditional Access PRD specific to AVD
+*   Designed policy comparison framework and What-If testing approach
+
+**Outcome:** AVD access is intentionally constrained, not broadly permissive.
+
+## 6\. Logging, Monitoring & Audit Readiness
+
+### Objectives
+
+*   Provide audit evidence on demand
+*   Avoid reactive log hunting
+
+### Work Completed
+
+*   Defined Log Analytics workspace strategy
+*   Standardized diagnostic settings for platform and security services
+*   Built KQL patterns for firewall traffic and security events
+
+**Outcome:** Audit questions can be answered with queries, not guesswork.
+
+## 7\. Automation & Infrastructure as Code (IaC)
+
+### Objectives
+
+*   Eliminate click-ops and ensure repeatability
+*   Reduce configuration drift
+
+### Work Completed
+
+*   Standardized Bicep-first deployment approach
+*   Defined parameterized templates for platform and security controls
+*   Established GitHub-based workflow for source-controlled infrastructure
+
+**Outcome:** Infrastructure changes are reviewable artifacts, not console actions.
+
+## 8\. Documentation & Stakeholder Artifacts
+
+### Objectives
+
+*   Enable executive understanding and support regulators
+*   Create long-term institutional knowledge
+
+### Work Completed
+
+*   Architecture diagrams (platform, identity, network)
+*   Formal PRDs for security initiatives
+*   Decision logs explaining _why_, not just _what_
+
+**Outcome:** The program is explainable, not opaque.
+
+## 9\. What We Explicitly Did NOT Do
+
+To be clear and direct, this was intentional and appropriate for a regulated bank:
+
+*   No unmanaged services
+*   No 24×7 SOC or NOC operations
+*   No vendor-driven “black box” designs
+*   No shortcutting governance for speed
+
+Special Focus
+
+## AI Foundry Workstream
+
+The AI Foundry effort was treated as a **regulated platform capability**, not a “data science sandbox.” The goal was to enable GenAI workloads without weakening the bank’s security posture.
+
+### Core Design Principles
+
+*   •**Identity-first:** Managed Identities / Service Principals
+*   •**Private-only:** Private endpoints + private DNS
+*   •**Centralized logging:** Audit trails for compliance
+*   •**Tight guardrails:** Policy enforcement
+
+### Practical Outcomes
+
+*   ✓No uncontrolled public endpoints
+*   ✓No mystery authentication
+*   ✓No “we’ll figure out logging later”
+*   ✓No one-off snowflake builds
+
+## Facing similar regulatory challenges?
+
+We help financial institutions build audit-ready Azure foundations.
+
+[Contact Us](/contact/)

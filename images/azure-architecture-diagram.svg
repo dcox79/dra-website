@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1400" height="3200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 3200">
+  <!-- Definitions for filters and effects -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Data flow gradients -->
+    <linearGradient id="flow-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    
+    <linearGradient id="flow-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </linearGradient>
+    
+    <linearGradient id="flow-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="3200" fill="#09090b"/>
+
+  <!-- Header -->
+  <text x="700" y="60" fill="#ffffff" font-size="36" font-weight="bold" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">
+    Azure Cloud Transformation
+  </text>
+  <text x="700" y="95" fill="#a1a1aa" font-size="18" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">
+    Enterprise Financial Services Architecture - Production Environment
+  </text>
+
+  <!-- Environment Badge -->
+  <rect x="600" y="120" width="200" height="40" rx="20" fill="#22c55e" opacity="0.2"/>
+  <text x="700" y="145" fill="#22c55e" font-size="16" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">
+    PRODUCTION
+  </text>
+
+  <!-- Layer 1: Identity & Access Management -->
+  <g transform="translate(0, 200)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#a855f7"/>
+    <text x="65" y="22" fill="#a855f7" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      IDENTITY &amp; ACCESS MANAGEMENT
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#a855f733" stroke-width="1"/>
+    
+    <!-- Azure Active Directory -->
+    <rect x="185" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#a855f7" stroke-width="1"/>
+    <rect x="197" y="72" width="32" height="32" rx="6" fill="#a855f71a"/>
+    <text x="244" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Active Directory</text>
+    <text x="244" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Enterprise SSO &amp; MFA</text>
+    
+    <!-- Azure AD B2C -->
+    <rect x="485" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#a855f7" stroke-width="1"/>
+    <rect x="497" y="72" width="32" height="32" rx="6" fill="#a855f71a"/>
+    <text x="544" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure AD B2C</text>
+    <text x="544" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Customer Identity</text>
+    
+    <!-- Privileged Identity Mgmt -->
+    <rect x="785" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#a855f7" stroke-width="1"/>
+    <rect x="797" y="72" width="32" height="32" rx="6" fill="#a855f71a"/>
+    <text x="844" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Privileged Identity Mgmt</text>
+    <text x="844" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">JIT Access Control</text>
+  </g>
+
+  <!-- Data Flow Line 1 -->
+  <line x1="100" y1="400" x2="1300" y2="400" stroke="url(#flow-gradient-1)" stroke-width="2"/>
+  <circle cx="690" cy="400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 394 L 700 400 L 696 406" stroke="#60a5fa" stroke-width="2" fill="none"/>
+
+  <!-- Layer 2: Security & Compliance -->
+  <g transform="translate(0, 450)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#ef4444"/>
+    <text x="65" y="22" fill="#ef4444" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      SECURITY &amp; COMPLIANCE
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#ef444433" stroke-width="1"/>
+    
+    <!-- Azure Security Center -->
+    <rect x="110" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#ef4444" stroke-width="1"/>
+    <rect x="122" y="72" width="32" height="32" rx="6" fill="#ef44441a"/>
+    <text x="169" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Security Center</text>
+    <text x="169" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Threat Protection</text>
+    
+    <!-- Key Vault -->
+    <rect x="390" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#ef4444" stroke-width="1"/>
+    <rect x="402" y="72" width="32" height="32" rx="6" fill="#ef44441a"/>
+    <text x="449" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Key Vault</text>
+    <text x="449" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Secrets Management</text>
+    
+    <!-- Azure Sentinel -->
+    <rect x="670" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#ef4444" stroke-width="1"/>
+    <rect x="682" y="72" width="32" height="32" rx="6" fill="#ef44441a"/>
+    <text x="729" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Sentinel</text>
+    <text x="729" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">SIEM &amp; SOAR</text>
+    
+    <!-- DDoS Protection -->
+    <rect x="950" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#ef4444" stroke-width="1"/>
+    <rect x="962" y="72" width="32" height="32" rx="6" fill="#ef44441a"/>
+    <text x="1009" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">DDoS Protection</text>
+    <text x="1009" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium</text>
+  </g>
+
+  <!-- Data Flow Line 2 -->
+  <line x1="100" y1="650" x2="1300" y2="650" stroke="url(#flow-gradient-2)" stroke-width="2"/>
+  <circle cx="690" cy="650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 644 L 700 650 L 696 656" stroke="#f87171" stroke-width="2" fill="none"/>
+
+  <!-- Layer 3: Network Infrastructure -->
+  <g transform="translate(0, 700)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#06b6d4"/>
+    <text x="65" y="22" fill="#06b6d4" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      NETWORK INFRASTRUCTURE
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#06b6d433" stroke-width="1"/>
+    
+    <!-- Virtual Network -->
+    <rect x="185" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#06b6d4" stroke-width="1"/>
+    <rect x="197" y="72" width="32" height="32" rx="6" fill="#06b6d41a"/>
+    <text x="244" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Virtual Network</text>
+    <text x="244" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Multi-region VNet</text>
+    
+    <!-- Application Gateway -->
+    <rect x="485" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#06b6d4" stroke-width="1"/>
+    <rect x="497" y="72" width="32" height="32" rx="6" fill="#06b6d41a"/>
+    <text x="544" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Application Gateway</text>
+    <text x="544" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">WAF &amp; Load Balancer</text>
+    
+    <!-- Azure Firewall -->
+    <rect x="785" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#06b6d4" stroke-width="1"/>
+    <rect x="797" y="72" width="32" height="32" rx="6" fill="#06b6d41a"/>
+    <text x="844" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Firewall</text>
+    <text x="844" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium Tier</text>
+  </g>
+
+  <!-- Data Flow Line 3 -->
+  <line x1="100" y1="900" x2="1300" y2="900" stroke="url(#flow-gradient-1)" stroke-width="2"/>
+  <circle cx="690" cy="900" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="900" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="900" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 894 L 700 900 L 696 906" stroke="#60a5fa" stroke-width="2" fill="none"/>
+
+  <!-- Layer 4: Application Services -->
+  <g transform="translate(0, 950)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#3b82f6"/>
+    <text x="65" y="22" fill="#3b82f6" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      APPLICATION SERVICES
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#3b82f633" stroke-width="1"/>
+    
+    <!-- App Service -->
+    <rect x="110" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="122" y="72" width="32" height="32" rx="6" fill="#3b82f61a"/>
+    <text x="169" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">App Service</text>
+    <text x="169" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium P2V3</text>
+    
+    <!-- Azure Functions -->
+    <rect x="390" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="402" y="72" width="32" height="32" rx="6" fill="#3b82f61a"/>
+    <text x="449" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Functions</text>
+    <text x="449" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium Plan</text>
+    
+    <!-- AKS -->
+    <rect x="670" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="682" y="72" width="32" height="32" rx="6" fill="#3b82f61a"/>
+    <text x="729" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Kubernetes</text>
+    <text x="729" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Multi-zone Cluster</text>
+    
+    <!-- API Management -->
+    <rect x="950" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="962" y="72" width="32" height="32" rx="6" fill="#3b82f61a"/>
+    <text x="1009" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">API Management</text>
+    <text x="1009" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium Tier</text>
+  </g>
+
+  <!-- Data Flow Line 4 -->
+  <line x1="100" y1="1150" x2="1300" y2="1150" stroke="url(#flow-gradient-3)" stroke-width="2"/>
+  <circle cx="690" cy="1150" r="3" fill="#4ade80"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="1150" r="3" fill="#4ade80"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="1150" r="3" fill="#4ade80"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 1144 L 700 1150 L 696 1156" stroke="#4ade80" stroke-width="2" fill="none"/>
+
+  <!-- Layer 5: Data Platform -->
+  <g transform="translate(0, 1200)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#22c55e"/>
+    <text x="65" y="22" fill="#22c55e" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      DATA PLATFORM
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#22c55e33" stroke-width="1"/>
+    
+    <!-- Azure SQL Database -->
+    <rect x="110" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#22c55e" stroke-width="1"/>
+    <rect x="122" y="72" width="32" height="32" rx="6" fill="#22c55e1a"/>
+    <text x="169" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure SQL Database</text>
+    <text x="169" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Hyperscale Tier</text>
+    
+    <!-- Cosmos DB -->
+    <rect x="390" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#22c55e" stroke-width="1"/>
+    <rect x="402" y="72" width="32" height="32" rx="6" fill="#22c55e1a"/>
+    <text x="449" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Cosmos DB</text>
+    <text x="449" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Multi-region Write</text>
+    
+    <!-- Azure Synapse -->
+    <rect x="670" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#22c55e" stroke-width="1"/>
+    <rect x="682" y="72" width="32" height="32" rx="6" fill="#22c55e1a"/>
+    <text x="729" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Synapse</text>
+    <text x="729" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Analytics Platform</text>
+    
+    <!-- Redis Cache -->
+    <rect x="950" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#22c55e" stroke-width="1"/>
+    <rect x="962" y="72" width="32" height="32" rx="6" fill="#22c55e1a"/>
+    <text x="1009" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Redis Cache</text>
+    <text x="1009" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium P4</text>
+  </g>
+
+  <!-- Data Flow Line 5 -->
+  <line x1="100" y1="1400" x2="1300" y2="1400" stroke="url(#flow-gradient-1)" stroke-width="2"/>
+  <circle cx="690" cy="1400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="1400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="1400" r="3" fill="#60a5fa"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 1394 L 700 1400 L 696 1406" stroke="#60a5fa" stroke-width="2" fill="none"/>
+
+  <!-- Layer 6: Integration & Messaging -->
+  <g transform="translate(0, 1450)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#eab308"/>
+    <text x="65" y="22" fill="#eab308" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      INTEGRATION &amp; MESSAGING
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#eab30833" stroke-width="1"/>
+    
+    <!-- Service Bus -->
+    <rect x="185" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#eab308" stroke-width="1"/>
+    <rect x="197" y="72" width="32" height="32" rx="6" fill="#eab3081a"/>
+    <text x="244" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Service Bus</text>
+    <text x="244" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Premium Tier</text>
+    
+    <!-- Event Grid -->
+    <rect x="485" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#eab308" stroke-width="1"/>
+    <rect x="497" y="72" width="32" height="32" rx="6" fill="#eab3081a"/>
+    <text x="544" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Event Grid</text>
+    <text x="544" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Event Routing</text>
+    
+    <!-- Logic Apps -->
+    <rect x="785" y="60" width="280" height="60" rx="8" fill="#27272a" stroke="#eab308" stroke-width="1"/>
+    <rect x="797" y="72" width="32" height="32" rx="6" fill="#eab3081a"/>
+    <text x="844" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Logic Apps</text>
+    <text x="844" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Workflow Automation</text>
+  </g>
+
+  <!-- Data Flow Line 6 -->
+  <line x1="100" y1="1650" x2="1300" y2="1650" stroke="url(#flow-gradient-2)" stroke-width="2"/>
+  <circle cx="690" cy="1650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="698" cy="1650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="706" cy="1650" r="3" fill="#f87171"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <path d="M 696 1644 L 700 1650 L 696 1656" stroke="#f87171" stroke-width="2" fill="none"/>
+
+  <!-- Layer 7: Monitoring & Management -->
+  <g transform="translate(0, 1700)">
+    <rect x="50" y="0" width="4" height="30" rx="2" fill="#f97316"/>
+    <text x="65" y="22" fill="#f97316" font-size="14" font-weight="600" letter-spacing="1.5" font-family="system-ui, -apple-system, sans-serif">
+      MONITORING &amp; MANAGEMENT
+    </text>
+    <line x1="65" y1="30" x2="1350" y2="30" stroke="#f9731633" stroke-width="1"/>
+    
+    <!-- Azure Monitor -->
+    <rect x="110" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#f97316" stroke-width="1"/>
+    <rect x="122" y="72" width="32" height="32" rx="6" fill="#f973161a"/>
+    <text x="169" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Monitor</text>
+    <text x="169" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Full Stack Monitoring</text>
+    
+    <!-- Application Insights -->
+    <rect x="390" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#f97316" stroke-width="1"/>
+    <rect x="402" y="72" width="32" height="32" rx="6" fill="#f973161a"/>
+    <text x="449" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Application Insights</text>
+    <text x="449" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">APM Solution</text>
+    
+    <!-- Log Analytics -->
+    <rect x="670" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#f97316" stroke-width="1"/>
+    <rect x="682" y="72" width="32" height="32" rx="6" fill="#f973161a"/>
+    <text x="729" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Log Analytics</text>
+    <text x="729" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Centralized Logging</text>
+    
+    <!-- Azure Automation -->
+    <rect x="950" y="60" width="260" height="60" rx="8" fill="#27272a" stroke="#f97316" stroke-width="1"/>
+    <rect x="962" y="72" width="32" height="32" rx="6" fill="#f973161a"/>
+    <text x="1009" y="87" fill="#ffffff" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">Azure Automation</text>
+    <text x="1009" y="103" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, sans-serif">Runbook Automation</text>
+  </g>
+
+  <!-- Key Architecture Principles -->
+  <g transform="translate(100, 1900)">
+    <rect x="0" y="0" width="1200" height="180" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="2" filter="url(#shadow)"/>
+    
+    <text x="20" y="40" fill="#ffffff" font-size="20" font-weight="600" font-family="system-ui, -apple-system, sans-serif">
+      🔄 Key Architecture Principles
+    </text>
+    
+    <!-- Principle 1 -->
+    <circle cx="30" cy="80" r="6" fill="#22c55e"/>
+    <text x="50" y="85" fill="#22c55e" font-size="15" font-weight="600" font-family="system-ui, -apple-system, sans-serif">Zero Trust Security</text>
+    <text x="50" y="105" fill="#a1a1aa" font-size="13" font-family="system-ui, -apple-system, sans-serif">Identity-based access with continuous verification</text>
+    
+    <!-- Principle 2 -->
+    <circle cx="30" cy="135" r="6" fill="#3b82f6"/>
+    <text x="50" y="140" fill="#3b82f6" font-size="15" font-weight="600" font-family="system-ui, -apple-system, sans-serif">High Availability</text>
+    <text x="50" y="160" fill="#a1a1aa" font-size="13" font-family="system-ui, -apple-system, sans-serif">Multi-region deployment with 99.99% SLA</text>
+    
+    <!-- Principle 3 -->
+    <circle cx="630" cy="80" r="6" fill="#a855f7"/>
+    <text x="650" y="85" fill="#a855f7" font-size="15" font-weight="600" font-family="system-ui, -apple-system, sans-serif">Compliance Ready</text>
+    <text x="650" y="105" fill="#a1a1aa" font-size="13" font-family="system-ui, -apple-system, sans-serif">PCI-DSS, SOC 2, ISO 27001 certified</text>
+    
+    <!-- Principle 4 -->
+    <circle cx="630" cy="135" r="6" fill="#f97316"/>
+    <text x="650" y="140" fill="#f97316" font-size="15" font-weight="600" font-family="system-ui, -apple-system, sans-serif">Disaster Recovery</text>
+    <text x="650" y="160" fill="#a1a1aa" font-size="13" font-family="system-ui, -apple-system, sans-serif">Automated backup with geo-redundancy</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="700" y="2150" fill="#71717a" font-size="12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">
+    Generated: January 2026 | Azure Cloud Architecture for Financial Services
+  </text>
+</svg>

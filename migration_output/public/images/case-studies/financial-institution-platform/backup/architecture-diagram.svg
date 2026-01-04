@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="card-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)"/>
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.4)"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bg-gradient)"/>
+  
+  <!-- Management Layer (Top) -->
+  <g transform="translate(50, 40)">
+    <rect width="1100" height="100" rx="8" fill="none" stroke="#334155" stroke-dasharray="8 8"/>
+    <text x="30" y="40" fill="#94A3B8" font-family="sans-serif" font-size="14" font-weight="600" letter-spacing="1">MANAGEMENT &amp; GOVERNANCE</text>
+    <g transform="translate(30, 60)">
+      <rect width="120" height="24" rx="4" fill="#1E293B"/>
+      <text x="60" y="16" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="12">Azure Policy</text>
+    </g>
+    <g transform="translate(160, 60)">
+      <rect width="120" height="24" rx="4" fill="#1E293B"/>
+      <text x="60" y="16" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="12">RBAC</text>
+    </g>
+    <g transform="translate(290, 60)">
+      <rect width="120" height="24" rx="4" fill="#1E293B"/>
+      <text x="60" y="16" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="12">Cost Mgmt</text>
+    </g>
+    <g transform="translate(420, 60)">
+      <rect width="150" height="24" rx="4" fill="#1E293B"/>
+      <text x="75" y="16" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="12">Defender for Cloud</text>
+    </g>
+  </g>
+
+  <!-- Identity (Left) -->
+  <g transform="translate(100, 250)">
+    <rect width="250" height="300" rx="12" fill="url(#card-gradient)" stroke="#0EA5E9" stroke-width="2"/>
+    <text x="125" y="40" text-anchor="middle" fill="#0EA5E9" font-family="sans-serif" font-size="18" font-weight="bold">Identity Platform</text>
+    
+    <g transform="translate(25, 80)">
+      <rect width="200" height="40" rx="4" fill="rgba(14, 165, 233, 0.1)"/>
+      <text x="100" y="25" text-anchor="middle" fill="#E0F2FE" font-family="sans-serif" font-size="14">Entra ID (Azure AD)</text>
+    </g>
+    <g transform="translate(25, 130)">
+      <rect width="200" height="40" rx="4" fill="rgba(14, 165, 233, 0.1)"/>
+      <text x="100" y="25" text-anchor="middle" fill="#E0F2FE" font-family="sans-serif" font-size="14">Privileged Identity (PIM)</text>
+    </g>
+    <g transform="translate(25, 180)">
+      <rect width="200" height="40" rx="4" fill="rgba(14, 165, 233, 0.1)"/>
+      <text x="100" y="25" text-anchor="middle" fill="#E0F2FE" font-family="sans-serif" font-size="14">Conditional Access</text>
+    </g>
+  </g>
+
+  <!-- Connectivity Hub (Center) -->
+  <g transform="translate(450, 220)">
+    <rect width="300" height="360" rx="12" fill="url(#card-gradient)" stroke="#10B981" stroke-width="2"/>
+    <text x="150" y="40" text-anchor="middle" fill="#10B981" font-family="sans-serif" font-size="18" font-weight="bold">Connectivity Hub</text>
+    
+    <!-- Central Icon Representation -->
+    <circle cx="150" cy="180" r="80" stroke="#10B981" stroke-width="1" stroke-dasharray="4 4" fill="rgba(16, 185, 129, 0.05)"/>
+    
+    <g transform="translate(50, 90)">
+      <rect width="200" height="36" rx="4" fill="rgba(16, 185, 129, 0.1)"/>
+      <text x="100" y="23" text-anchor="middle" fill="#D1FAE5" font-family="sans-serif" font-size="14">Azure Virtual WAN</text>
+    </g>
+    <g transform="translate(50, 140)">
+      <rect width="200" height="36" rx="4" fill="rgba(16, 185, 129, 0.1)"/>
+      <text x="100" y="23" text-anchor="middle" fill="#D1FAE5" font-family="sans-serif" font-size="14">Azure Firewall Prem.</text>
+    </g>
+    <g transform="translate(50, 240)">
+      <rect width="200" height="36" rx="4" fill="rgba(16, 185, 129, 0.1)"/>
+      <text x="100" y="23" text-anchor="middle" fill="#D1FAE5" font-family="sans-serif" font-size="14">ExpressRoute / VPN</text>
+    </g>
+    <g transform="translate(50, 290)">
+      <rect width="200" height="36" rx="4" fill="rgba(16, 185, 129, 0.1)"/>
+      <text x="100" y="23" text-anchor="middle" fill="#D1FAE5" font-family="sans-serif" font-size="14">Private DNS</text>
+    </g>
+  </g>
+
+  <!-- Workloads (Right) -->
+  <g transform="translate(850, 180)">
+    <!-- App Workloads -->
+    <rect width="250" height="120" rx="8" fill="url(#card-gradient)" stroke="#8B5CF6" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="#8B5CF6" font-family="sans-serif" font-size="16" font-weight="600">App Workloads</text>
+    <text x="125" y="60" text-anchor="middle" fill="#C4B5FD" font-family="sans-serif" font-size="13">AKS Clusters</text>
+    <text x="125" y="85" text-anchor="middle" fill="#C4B5FD" font-family="sans-serif" font-size="13">SQL &amp; Cosmos DB</text>
+  </g>
+
+  <g transform="translate(850, 340)">
+    <!-- AI Foundry -->
+    <rect width="250" height="120" rx="8" fill="url(#card-gradient)" stroke="#F59E0B" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" fill="#F59E0B" font-family="sans-serif" font-size="16" font-weight="bold">AI Foundry</text>
+    <text x="125" y="60" text-anchor="middle" fill="#FDE68A" font-family="sans-serif" font-size="13">Azure OpenAI</text>
+    <text x="125" y="85" text-anchor="middle" fill="#FDE68A" font-family="sans-serif" font-size="13">AI Search &amp; APIM</text>
+  </g>
+
+  <g transform="translate(850, 500)">
+    <!-- AVD -->
+    <rect width="250" height="120" rx="8" fill="url(#card-gradient)" stroke="#EC4899" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="#EC4899" font-family="sans-serif" font-size="16" font-weight="600">AVD Host Pools</text>
+    <text x="125" y="60" text-anchor="middle" fill="#FBCFE8" font-family="sans-serif" font-size="13">Secure Remote Access</text>
+    <text x="125" y="85" text-anchor="middle" fill="#FBCFE8" font-family="sans-serif" font-size="13">FSLogix Profiles</text>
+  </g>
+
+  <!-- Connections -->
+  <g stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <!-- Identity to Hub -->
+    <path d="M 350 400 L 440 400" />
+    
+    <!-- Hub to App Workloads -->
+    <path d="M 750 300 C 800 300, 800 240, 840 240" />
+    
+    <!-- Hub to AI Foundry -->
+    <path d="M 750 400 L 840 400" />
+    
+    <!-- Hub to AVD -->
+    <path d="M 750 500 C 800 500, 800 560, 840 560" />
+  </g>
+
+  <!-- Security/Monitoring (Bottom Left, distinct) -->
+  <g transform="translate(100, 600)">
+    <rect width="250" height="100" rx="8" fill="none" stroke="#64748B" stroke-dasharray="4 4"/>
+    <text x="125" y="30" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="14" font-weight="600">OBSERVABILITY</text>
+    <g transform="translate(25, 50)">
+      <circle cx="15" cy="15" r="5" fill="#EF4444"/>
+      <text x="30" y="20" fill="#E2E8F0" font-family="sans-serif" font-size="13">Microsoft Sentinel</text>
+    </g>
+    <g transform="translate(25, 75)">
+      <circle cx="15" cy="15" r="5" fill="#3B82F6"/>
+      <text x="30" y="20" fill="#E2E8F0" font-family="sans-serif" font-size="13">Log Analytics</text>
+    </g>
+  </g>
+
+</svg>
