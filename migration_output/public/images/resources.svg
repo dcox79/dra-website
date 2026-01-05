@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img"
+     aria-label="From signal to execution: Observations, Architecture Signals, Decisions and Trade-offs, Artifacts and Evidence, Executable Outcomes">
+
+  <defs>
+    <linearGradient id="draStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#309ECE"/>
+      <stop offset="55%" stop-color="#249C96"/>
+      <stop offset="100%" stop-color="#50B47E"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <style type="text/css"><![CDATA[
+      .h { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 700; letter-spacing: 0.2px; }
+      .b { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 500; }
+
+      .panel { fill: #0B1220; }
+      .subpanel { fill: #0F172A; opacity: 0.85; }
+      .card { fill: rgba(255,255,255,0.06); stroke: rgba(148,163,184,0.22); stroke-width: 1; filter: url(#shadow); }
+      .title { fill: #F8FAFC; font-size: 16px; }
+      .desc { fill: rgba(248,250,252,0.78); font-size: 12.75px; }
+
+      .connGlow { fill: none; stroke: rgba(48,158,206,0.22); stroke-width: 6; stroke-linecap: round; }
+      .conn { fill: none; stroke: url(#draStroke); stroke-width: 2.25; stroke-linecap: round; stroke-dasharray: 7 10; }
+
+      @keyframes riseFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0px); } }
+      @keyframes dashMove { from { stroke-dashoffset: 160; opacity: 0; } to { stroke-dashoffset: 0; opacity: 1; } }
+
+      .group { opacity: 0; animation: riseFade 650ms ease-out forwards; transform-origin: center; }
+      .g1 { animation-delay: 80ms; }
+      .g2 { animation-delay: 160ms; }
+      .g3 { animation-delay: 240ms; }
+      .g4 { animation-delay: 320ms; }
+      .g5 { animation-delay: 400ms; }
+
+      .lineAnim { stroke-dashoffset: 160; animation: dashMove 1100ms ease-out forwards; }
+      .l1 { animation-delay: 120ms; }
+      .l2 { animation-delay: 220ms; }
+      .l3 { animation-delay: 320ms; }
+      .l4 { animation-delay: 420ms; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .group, .lineAnim { animation: none !important; opacity: 1 !important; }
+        .conn { stroke-dasharray: none; }
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Background panel -->
+  <rect class="panel" x="0" y="0" width="1200" height="360" rx="18"/>
+  <rect class="subpanel" x="24" y="18" width="1152" height="324" rx="18"/>
+
+  <!-- Header -->
+  <text class="h" x="48" y="64" fill="#F8FAFC" font-size="18">From signal to execution</text>
+  <text class="b" x="48" y="88" fill="rgba(248,250,252,0.78)" font-size="13">
+    Resources are structured to move from observed risk → explicit decisions → reviewable artifacts → outcomes.
+  </text>
+
+  <!-- Connectors -->
+  <path class="connGlow lineAnim l1" d="M262 206 C282 206, 282 206, 302 206"/>
+  <path class="connGlow lineAnim l2" d="M516 206 C536 206, 536 206, 556 206"/>
+  <path class="connGlow lineAnim l3" d="M770 206 C790 206, 790 206, 810 206"/>
+
+  <path class="conn lineAnim l1" d="M262 206 C282 206, 282 206, 302 206"/>
+  <path class="conn lineAnim l2" d="M516 206 C536 206, 536 206, 556 206"/>
+  <path class="conn lineAnim l3" d="M770 206 C790 206, 790 206, 810 206"/>
+
+  <!-- Cards -->
+  <g class="group g1">
+    <rect class="card" x="48" y="122" width="214" height="168" rx="18"/>
+    <text class="h title" x="66" y="156">Observations</text>
+    <text class="b desc" x="66" y="180">What we see in real environments</text>
+    <text class="b desc" x="66" y="210">• Identity sprawl</text>
+    <text class="b desc" x="66" y="232">• Broken routing assumptions</text>
+    <text class="b desc" x="66" y="254">• Logging gaps</text>
+    <text class="b desc" x="66" y="276">• Audit pressure</text>
+  </g>
+
+  <g class="group g2">
+    <rect class="card" x="302" y="122" width="214" height="168" rx="18"/>
+    <text class="h title" x="320" y="156">Architecture Signals</text>
+    <text class="b desc" x="320" y="180">Patterns that indicate fragility</text>
+    <text class="b desc" x="320" y="210">• Trust boundary drift</text>
+    <text class="b desc" x="320" y="232">• Undocumented dependencies</text>
+    <text class="b desc" x="320" y="254">• Privileged access misuse</text>
+    <text class="b desc" x="320" y="276">• Policy inconsistency</text>
+  </g>
+
+  <g class="group g3">
+    <rect class="card" x="556" y="122" width="214" height="168" rx="18"/>
+    <text class="h title" x="574" y="156">Decisions &amp; Trade-offs</text>
+    <text class="b desc" x="574" y="180">Explicit choices with rationale</text>
+    <text class="b desc" x="574" y="210">• vWAN vs hub-spoke</text>
+    <text class="b desc" x="574" y="232">• Centralized vs distributed logs</text>
+    <text class="b desc" x="574" y="254">• MI vs service principals</text>
+    <text class="b desc" x="574" y="276">• Design-only vs design-build</text>
+  </g>
+
+  <g class="group g4">
+    <rect class="card" x="810" y="122" width="214" height="168" rx="18"/>
+    <text class="h title" x="828" y="156">Artifacts &amp; Evidence</text>
+    <text class="b desc" x="828" y="180">What you can review and use</text>
+    <text class="b desc" x="828" y="210">• Diagrams</text>
+    <text class="b desc" x="828" y="232">• Findings register</text>
+    <text class="b desc" x="828" y="254">• Roadmap (Now / Next / Later)</text>
+    <text class="b desc" x="828" y="276">• Decision log (ADRs)</text>
+  </g>
+
+  <g class="group g5">
+    <rect x="48" y="300" width="976" height="42" rx="14" fill="rgba(80,180,126,0.14)" stroke="rgba(80,180,126,0.55)" stroke-width="1"/>
+    <text class="h" x="64" y="327" fill="#F8FAFC" font-size="14">Executable Outcomes:</text>
+    <text class="b" x="220" y="327" fill="rgba(248,250,252,0.82)" font-size="12.5">Reduced outage risk • Clear boundaries • Defensible posture • Predictable execution • Built for review by engineers and auditors</text>
+  </g>
+
+</svg>

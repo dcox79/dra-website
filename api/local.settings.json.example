@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "SENDGRID_API_KEY": "get_from_azure_appsettings",
+    "FROM_EMAIL": "info@defaultrouteadvisory.com",
+    "SENDGRID_FROM_EMAIL": "info@defaultrouteadvisory.com",
+    "NOTIFICATION_EMAIL": "sales@defaultrouteadvisory.com",
+    "SENDGRID_TO_EMAIL": "sales@defaultrouteadvisory.com",
+    "REPLY_TO_EMAIL": "sales@defaultrouteadvisory.com",
+    "RECAPTCHA_SECRET_KEY": "your_recaptcha_secret_key_here",
+    "AZURE_STORAGE_CONNECTION_STRING": "get_from_azure_appsettings"
+  },
+  "Host": {
+    "CORS": "*",
+    "CORSCredentials": false
+  }
+}
