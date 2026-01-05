@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "staticWebAppName": {
+      "value": "dra-website-prod"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "sku": {
+      "value": "Standard"
+    },
+    "customDomains": {
+      "value": [
+        "defaultrouteadvisory.com",
+        "www.defaultrouteadvisory.com"
+      ]
+    },
+    "repositoryUrl": {
+      "value": "https://github.com/dcox79/dra-website"
+    },
+    "repositoryBranch": {
+      "value": "main"
+    },
+    "repositoryToken": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "github-token"
+      }
+    },
+    "buildProperties": {
+      "value": {
+        "appLocation": "/",
+        "apiLocation": "api",
+        "outputLocation": "dist",
+        "appBuildCommand": "npm run build",
+        "apiBuildCommand": ""
+      }
+    },
+    "appSettings": {
+      "value": {
+        "SENDGRID_API_KEY": "#{SENDGRID_API_KEY}#",
+        "SENDGRID_FROM_EMAIL": "#{SENDGRID_FROM_EMAIL}#",
+        "SENDGRID_TO_EMAIL": "#{SENDGRID_TO_EMAIL}#",
+        "RECAPTCHA_SECRET_KEY": "#{RECAPTCHA_SECRET_KEY}#"
+      }
+    }
+  }
+}

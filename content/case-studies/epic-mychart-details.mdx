@@ -1,0 +1,197 @@
+---
+title: "Epic MyChart Case Study - Technical Details | Default Route Advisory"
+description: "Complete technical details of Epic MyChart enablement through Azure-native identity and DNS modernization. Zero-downtime migration of 27,000+ identities and 47 DNS zones."
+canonical: "/case-studies/epic-mychart/details"
+draft: true
+---
+
+Case Study
+
+# Enabling Epic MyChart Through Azure-Native Identity and DNS Modernization
+
+Zero-downtime migration of 27,000+ identities and 47 DNS zones to meet Epic's strict governance requirements
+
+## Executive Summary
+
+A large, multi-site healthcare provider needed to meet Epic's strict security, governance, and infrastructure ownership requirements in order to deploy **Epic MyChart**, Epic's patient engagement portal. The organization's existing MSP-managed identity and DNS model lacked the control, auditability, and compliance posture required to pass Epic readiness assessments.
+
+To address this, the organization executed a zero-downtime migration from an MSP-controlled control plane to an Azure-native identity and DNS architecture. The engagement migrated more than **27,000 user identities**, consolidated **47 public DNS zones**, preserved federated authentication, and established direct operational ownership—creating a compliant foundation for Epic MyChart and future digital health initiatives.
+
+## Results
+
+27,409
+
+User identities migrated with zero authentication disruption
+
+47
+
+Public DNS zones migrated to Azure
+
+Zero
+
+Downtime during cutover
+
+## The Business Problem: Epic MyChart as the Forcing Function
+
+Epic MyChart imposes **non-negotiable requirements** around identity governance, DNS authority, auditability, and operational accountability. During Epic readiness reviews, it became clear that the organization's MSP-managed environment could not meet these standards.
+
+Identity, DNS, and federation services were controlled externally, resulting in:
+
+*   Limited visibility into security-critical systems
+*   Slow change velocity for identity and DNS updates
+*   Inconsistent audit trails and compliance evidence
+*   Critical authentication flows tied to third-party control
+
+Without re-platforming these foundational services, **Epic MyChart deployment was not possible**. Maintaining the status quo would have delayed patient portal rollout and increased long-term compliance risk.
+
+## Epic MyChart Readiness Flow
+
+![Epic MyChart readiness flow showing migration from MSP-managed control plane to Azure-native services](/images/case-studies/epic-mychart/epic-readiness-flow.png)
+
+## Before vs After: Architecture Transformation
+
+![Comparison of MSP-managed control plane versus organization-owned Azure control plane](/images/case-studies/epic-mychart/before-after-architecture.png)
+
+### Before (MSP-Managed Control Plane)
+
+*   ✗Authoritative DNS hosted by an external MSP
+*   ✗Identity services controlled outside the organization
+*   ✗Federation and SSO dependencies tied to MSP-managed endpoints
+*   ✗Limited auditability and slow incident response
+*   ✗Epic readiness blocked due to governance gaps
+
+### After (Org-Owned Azure Control Plane)
+
+*   ✓Azure DNS as authoritative public DNS
+*   ✓Internal AD-integrated DNS fully owned and operated
+*   ✓Provider-owned Microsoft Entra ID tenant
+*   ✓Centralized logging, RBAC, and change auditing
+*   ✓Epic compliance prerequisites met
+
+## Solution Overview
+
+The solution focused on **reclaiming ownership of identity and DNS** while maintaining uninterrupted clinical operations:
+
+*   Azure-native authoritative DNS for all public domains
+*   Internally owned AD-integrated DNS for private name resolution
+*   Azure-native identity with immutable identifiers preserved
+*   Migration from ADFS to Azure-native Single Sign-On
+*   Parallel-run migration model with tested rollback
+*   Zero downtime for users and applications
+
+Identity and DNS were treated as **foundational control-plane services**, not isolated technical components.
+
+## Complete Enterprise Migration Architecture
+
+End-to-end view of the Epic patient portal infrastructure and healthcare connectivity architecture
+
+![Complete enterprise migration architecture showing governance and management plane, Azure Virtual WAN connecting 71 hospital sites, integrated SaaS vendors, Azure Virtual Desktop with 6,000+ concurrent users, and clinical applications](/images/case-studies/epic-mychart/EpicMigrationDark.png)
+
+## Enterprise Azure Architecture Context
+
+This migration was executed within a **large-scale, regulated Azure healthcare environment** supporting mission-critical clinical operations.
+
+The organization operates **71 hospital sites**, interconnected through a **multi-region Azure Virtual WAN (vWAN)** architecture that provides resilient, segmented connectivity to internal systems and more than a dozen external healthcare and vendor platforms.
+
+### Key Platform Elements
+
+*   →**Multi-region Azure vWAN** serving as the primary connectivity backbone
+*   →**Hub-and-spoke landing zone architecture**, separating management, identity, and connectivity concerns
+*   →**6,000+ concurrent Azure Virtual Desktop (AVD) sessions** supporting clinicians and operational staff
+*   →**Greenfield Active Directory domain build**, replacing legacy MSP-managed directory services
+*   →**Migration from ADFS to Azure-native Single Sign-On**, simplifying authentication while strengthening security
+*   →**Microsoft Defender and Intune integration**, enabling endpoint protection, compliance enforcement, and centralized visibility
+
+Within this environment, identity and DNS ownership were not incremental improvements—they were **prerequisites for scale, security, and regulatory compliance**.
+
+## Execution Approach
+
+01
+
+### Discovery & Readiness
+
+Comprehensive inventory of users, domains, DNS records, and federation dependencies.
+
+02
+
+### Parallel Platform Build
+
+Azure DNS and identity platforms built alongside existing MSP services.
+
+03
+
+### Validation & Dry-Run Testing
+
+Direct DNS queries, authentication validation, TTL reduction, and cutover rehearsals.
+
+04
+
+### Zero-Downtime Cutover
+
+Registrar delegation switched to Azure DNS without service interruption.
+
+05
+
+### Post-Migration Verification
+
+Monitoring, audit validation, and controlled MSP service decommissioning.
+
+All phases were executed without disrupting clinical workflows or patient-facing systems.
+
+## Business Impact
+
+✓
+
+Unblocked Epic MyChart deployment
+
+✓
+
+Improved security posture and audit readiness
+
+✓
+
+Reduced operational risk and MSP dependency
+
+✓
+
+Increased change velocity and incident response speed
+
+✓
+
+Established scalable Azure foundation for future digital health initiatives
+
+✓
+
+Full internal ownership of identity and DNS platforms
+
+## Why This Matters
+
+Healthcare platforms like Epic increasingly assume **direct ownership of identity and infrastructure** as a baseline requirement. Organizations that rely on externally controlled control planes face growing compliance risk, operational friction, and deployment delays.
+
+This engagement demonstrates how reclaiming ownership of foundational services enables not only Epic MyChart, but long-term digital health transformation.
+
+## Technologies Used
+
+Microsoft Azure
+
+Azure DNS
+
+Azure Virtual WAN
+
+Active Directory
+
+Microsoft Entra ID
+
+Azure Virtual Desktop
+
+Microsoft Defender
+
+Microsoft Intune
+
+Infrastructure as Code
+
+## Need to modernize your Azure architecture?
+
+Let's discuss how we can help you establish compliant, scalable infrastructure.
+
+[Contact Us](/contact/)

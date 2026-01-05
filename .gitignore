@@ -31,6 +31,8 @@ dist-ssr
 
 # Build output
 build
+dist
+dist-ssr
 *.tsbuildinfo
 
 # Testing

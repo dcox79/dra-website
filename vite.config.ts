@@ -1,12 +1,21 @@
 
   import { defineConfig } from 'vite';
-  import react from '@vitejs/plugin-react-swc';
+  import react from '@vitejs/plugin-react';
+  import mdx from '@mdx-js/rollup';
+  import remarkFrontmatter from 'remark-frontmatter';
+  import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
   import path from 'path';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [
+      { enforce: 'pre', ...mdx({
+        remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+        providerImportSource: '@mdx-js/react'
+      }) },
+      react()
+    ],
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.mdx'],
       alias: {
         'vaul@1.1.2': 'vaul',
         'sonner@2.0.3': 'sonner',
@@ -51,7 +60,7 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist',
     },
     server: {
       port: 3000,

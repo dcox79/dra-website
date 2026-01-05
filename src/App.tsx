@@ -1,36 +1,62 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { mdxRoutes } from '@/lib/mdxRoutes';
+import { MdxPageRenderer } from '@/components/MdxPageRenderer';
 
-// Page imports
-import { HomePage } from "./components/HomePage";
-import { AboutPage } from "./components/AboutPageWrapper";
-import { ContactPage } from "./components/ContactPageNew";
-import { ServicePage } from "./components/ServicePage";
-import { azureEnvironmentAssessment } from "./data/services/azure-environment-assessment";
-import { azureLandingZones } from "./data/services/azure-landing-zones";
-import { identityAccessManagement } from "./data/services/identity-access-management";
+/**
+ * 404 Not Found Page
+ */
+function NotFoundPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center px-6">
+      <div className="text-center max-w-2xl">
+        <h1 className="text-6xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+          404
+        </h1>
+        <h2 className="text-3xl font-semibold mb-6" style={{ color: 'var(--text-secondary)' }}>
+          Page Not Found
+        </h2>
+        <p className="text-lg mb-8" style={{ color: 'var(--text-tertiary)' }}>
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <a
+          href="/"
+          className="inline-block px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+          style={{
+            background: 'var(--primary-azure)',
+            color: 'var(--text-primary)'
+          }}
+        >
+          Return Home
+        </a>
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
-  const [activePage, setActivePage] = useState("home");
+  return (
+    <HelmetProvider>
+      <Router>
+        <div className="dark min-h-screen">
+          <Routes>
+            {/* Generate routes from MDX files */}
+            {mdxRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<MdxPageRenderer />}
+              />
+            ))}
 
-  // Simple router based on hash/state
-  const renderPage = () => {
-    switch (activePage) {
-      case "home":
-        return <HomePage onNavigate={setActivePage} />;
-      case "about":
-        return <AboutPage onNavigate={setActivePage} />;
-      case "contact":
-        return <ContactPage onNavigate={setActivePage} />;
-      case "service-assessment":
-        return <ServicePage service={azureEnvironmentAssessment} onNavigate={setActivePage} />;
-      case "service-landing-zones":
-        return <ServicePage service={azureLandingZones} onNavigate={setActivePage} />;
-      case "service-identity":
-        return <ServicePage service={identityAccessManagement} onNavigate={setActivePage} />;
-      default:
-        return <HomePage onNavigate={setActivePage} />;
-    }
-  };
+            {/* 404 Not Found */}
+            <Route path="/404" element={<NotFoundPage />} />
 
-  return <div className="dark min-h-screen">{renderPage()}</div>;
+            {/* Catch-all redirect to 404 */}
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
+        </div>
+      </Router>
+    </HelmetProvider>
+  );
 }
