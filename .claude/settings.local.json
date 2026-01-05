@@ -14,7 +14,10 @@
       "Bash(az staticwebapp show:*)",
       "Bash(az staticwebapp appsettings list:*)",
       "Bash(az staticwebapp secrets:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(az staticwebapp appsettings set:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
